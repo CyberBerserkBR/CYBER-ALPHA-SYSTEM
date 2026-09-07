@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: cyber-apha-system
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    port: 8000
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+    plan: free
+    region: oregon
+    branch: main
